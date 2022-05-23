@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     float dirX = 0f;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 3f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float jumpForce = 4f;
     [SerializeField] private LayerMask jumpGround;
     // Start is called before the first frame update
     private enum moveState { idle, running, jumping, falling };
