@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     float dirX = 0f;
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float jumpForce = 4f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 14f;
     [SerializeField] private LayerMask jumpGround;
     // Start is called before the first frame update
     private enum moveState { idle, running, jumping, falling };
@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-        dirX = Input.GetAxis("Horizontal");
+        // GetAxisRaw only returns discrete value, -1, 0, 1 rather than value gradualy change like GetAxis
+        dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && isGrounded())

@@ -12,6 +12,7 @@ public class Platform_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check distance of current point and platform => moving
         if (Vector2.Distance(points[currentPointIdx].transform.position, transform.position) < 1f)
         {
             currentPointIdx++;
