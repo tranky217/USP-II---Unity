@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CollectItem : MonoBehaviour
 {
     [SerializeField] private Text appleText;
+    [SerializeField] private AudioSource collectionSoundEffect;
     private int items = 0;
     // Start is called before the first frame update
     // appleText = GetComponent<TMP_Text>();
@@ -15,6 +16,7 @@ public class CollectItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("apple"))
         {
+            collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             items++;
             // Debug.Log("Apples: " + items);
